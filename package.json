@@ -1,0 +1,20 @@
+{
+    "name": "cheshire_cat",
+    "version": "0.0.0",
+    "description": "browser extension",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "build": "tsc -build --force tsconfig.json",
+        "test": "your-test-command"
+    },
+    "author": "Wong",
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.17.1",
+        "puppeteer": "^5.2.1"
+    },
+    "devDependencies": {
+        "jest": "^26.6.3"
+    }
+}
