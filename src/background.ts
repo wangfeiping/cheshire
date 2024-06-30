@@ -5,12 +5,11 @@ function changeTheme(color: string): void {
 }
 
 chrome.action.onClicked.addListener((tab) => {
-    active = !active;
-    const color = active ? 'black' : 'white';
-    chrome.scripting.executeScript({
-        target: {tabId: tab.id ? tab.id : -1},
-        func: changeTheme,
-        args: [color]
-    }).then();
+    chrome.windows.create({
+        url: 'popup.html',
+        type: 'popup',
+        width: 400,
+        height: 300
+    });
 });
 
