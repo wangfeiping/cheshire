@@ -17,3 +17,6 @@ https://segmentfault.com/a/1190000042584163
 
 https://stackoverflow.com/questions/17928979/how-to-programmatically-open-chrome-extension-popup-html
 https://stackoverflow.com/questions/10340481/popup-window-in-chrome-extension
+
+copy-webpack-plugin
+https://runebook.dev/zh/docs/webpack/plugins/copy-webpack-plugin
