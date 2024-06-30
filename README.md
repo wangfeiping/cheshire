@@ -1,17 +1,19 @@
 # Cheshire Cat
 
-npm run build
+## 构建
 
-To generate a configuration file that compiles and packages your project as a browser extension, you can follow these steps:
+$ npm run build
 
-1. Create a `manifest.json` file in the root directory of your project. This file will contain the configuration settings for your browser extension.
+## 参考
 
-2. Define the necessary properties in the `manifest.json` file, such as the extension's name, version, description, and permissions. You can refer to the browser extension documentation for the specific properties required by your target browser.
+https://developer.chrome.com/docs/extensions
 
-3. Configure your build script to include the `manifest.json` file in the output directory. This ensures that the file is included when you build and package your project.
+I will cover, what are extensions, the importance of TypeScript, and how to create a simple chrome extension using TypeScript showing the required procedures step by step.
+https://betterprogramming.pub/creating-chrome-extensions-with-typescript-914873467b65
 
-4. Update the build script in your `package.json` file to include the necessary commands for compiling and packaging your project as a browser extension. This may involve using tools like webpack or browserify to bundle your code, and then using a tool like web-ext or crx to package the bundled code into a browser extension.
+基于webpack搭建Chrome扩展开发环境
+Chrome扩展开发是目前比较火爆的领域，作为市场占有率第一的浏览器，有海量用户支撑。同时，Chrome扩展可以无缝对接Edge浏览器，不可不谓一箭双雕。本文将介绍如何使用webpack构建一个支持Typescript的开发环境，在此基础上，实现一个可以修改网页背景的扩展应用。
+https://segmentfault.com/a/1190000042584163
 
-5. Run the `npm run build` command to trigger the build process and generate the browser extension package.
-
-Remember to customize the configuration settings in the `manifest.json` file according to your project's requirements and the specific browser you are targeting.
+https://stackoverflow.com/questions/17928979/how-to-programmatically-open-chrome-extension-popup-html
+https://stackoverflow.com/questions/10340481/popup-window-in-chrome-extension

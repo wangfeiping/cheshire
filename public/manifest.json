@@ -1,0 +1,15 @@
+{
+    "name": "Change Theme Extension",
+    "description": "This extension is made for demonstration purposes",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": [
+       "activeTab",
+       "scripting"
+    ],
+    "action":{},
+    "background": {
+       "service_worker": "background.js"
+    }
+ }
+
