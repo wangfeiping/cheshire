@@ -5,11 +5,11 @@ function changeTheme(color: string): void {
 }
 
 chrome.action.onClicked.addListener((tab) => {
-    chrome.windows.create({
-        url: 'popup.html',
-        type: 'popup',
-        width: 400,
-        height: 300
-    });
+    // chrome.windows.create({
+    //     url: 'popup.html',
+    //     type: 'popup',
+    //     width: 400,
+    //     height: 300
+    // });
 });
 
