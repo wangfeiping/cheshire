@@ -1,23 +1,9 @@
 const button = document.createElement('button');
 button.textContent = 'Click me';
 button.addEventListener('click', () => {
-            // Perform some action when the button is clicked
-    //chrome.tabs.create({
-    //  url: 'dashboard.html',
-    //  active: true
-    //});
-//    chrome.action.setPopup({
-//    popup: 'dashboard.html'
-//  });
-
-  // chrome.action.setBadgeBackgroundColor({
-  //   color: '#FF0000'
-  // });
-
-  // chrome.action.setIcon({
-
+  // 发送切换页面消息，background.js(service worker)会监听到并设置页面，以保证重新点击图标打开popup时，popup页面不会打开就页面
   chrome.runtime.sendMessage({ action: 'dashboard' });
-
+  // 立即切换页面
   window.location.replace("dashboard.html");
 });
 document.body.appendChild(button);
