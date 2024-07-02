@@ -14,25 +14,11 @@ async function onInit() {
     text: "OFF",
   });
 
-  console.log("cheshire cat...");
+//  chrome.action.setPopup({
+//    popup: 'dashboard.html'
+//  });
 
-  const current = await chrome.windows.getCurrent();
-  const allTabs = await chrome.tabs.query({});
-  allTabs.forEach((tab) => {
-    if (tab.windowId == current.id) {
-        //chrome.tabs.executeScript(tab.id, {
-        //    code: `
-        //        const button = document.createElement('button');
-        //        button.textContent = 'Click me';
-        //        button.addEventListener('click', () => {
-        //            // Perform some action when the button is clicked
-        //        });
-        //        document.body.appendChild(button);
-        //    `
-        //});
-        console.log("cheshire cat!");
-     }
-   });
+  console.log("cheshire cat...");
 }
 
 chrome.runtime.onInstalled.addListener(onInit);
@@ -45,4 +31,21 @@ chrome.action.onClicked.addListener((tab) => {
     //     height: 300
     // });
 });
+
+// Send tip to content script via messaging
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.action === 'popup') {
+    chrome.action.setPopup({
+      popup: 'popup.html'
+    });
+    return true;
+  }
+  if (message.action === 'dashboard') {
+    chrome.action.setPopup({
+      popup: 'dashboard.html'
+    });
+    return true;
+  }
+});
+
 
