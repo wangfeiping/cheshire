@@ -11,7 +11,7 @@ module.exports = {
     "publicPath": path.join(__dirname, "./dist"),// additional devServer configurations
    },
    output: {
-      path: path.join(__dirname, "./dist"),
+      path: path.join(__dirname, "./dist/js"),
       filename: "[name].js",
    },
    resolve: {
@@ -28,7 +28,7 @@ module.exports = {
    },
    plugins: [
       new CopyPlugin({
-         patterns: [{from: '.', to: '.',context: "public"}]
+         patterns: [{from: '.', to: '../',context: "public"}]
       }),
    ],
 };
