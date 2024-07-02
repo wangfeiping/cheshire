@@ -24,6 +24,11 @@ https://runebook.dev/zh/docs/webpack/plugins/copy-webpack-plugin
 
 https://www.webpackjs.com/plugins/copy-webpack-plugin/  
 
+https://developer.chrome.com/docs/extensions/get-started/tutorial/scripts-activetab
 
 popup  
 https://developer.chrome.com/docs/extensions/get-started/tutorial/popup-tabs-manager  
+
+chrome extension API  
+https://developer.chrome.com/docs/extensions/reference/api/windows  
+https://developer.chrome.com/docs/extensions/reference/api/scripting  
