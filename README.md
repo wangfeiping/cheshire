@@ -32,3 +32,8 @@ https://developer.chrome.com/docs/extensions/get-started/tutorial/popup-tabs-man
 chrome extension API  
 https://developer.chrome.com/docs/extensions/reference/api/windows  
 https://developer.chrome.com/docs/extensions/reference/api/scripting  
+
+TRON JS SDK
+
+https://developers.tron.network/reference/getnowblock
+
