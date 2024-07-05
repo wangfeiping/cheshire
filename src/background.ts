@@ -31,12 +31,14 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     chrome.action.setPopup({
       popup: 'popup.html'
     });
+    console.log("receive action popup...");
     return true;
   }
   if (message.action === 'dashboard') {
     chrome.action.setPopup({
       popup: 'dashboard.html'
     });
+    console.log("receive action dashboard...");
     return true;
   }
 });

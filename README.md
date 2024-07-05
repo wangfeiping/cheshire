@@ -35,5 +35,7 @@ https://developer.chrome.com/docs/extensions/reference/api/scripting
 
 TRON JS SDK
 
+https://github.com/tronprotocol/tronweb
+
 https://developers.tron.network/reference/getnowblock
 
