@@ -16,6 +16,15 @@ module.exports = {
    },
    resolve: {
       extensions: [".ts", ".js"],
+      fallback: {
+         //"crypto-browserify": require.resolve('crypto-browserify'), //if you want to use this module also don't forget npm i crypto-browserify 
+         "fs": false,
+         "url": require.resolve("url/"),
+         "https": require.resolve("https-browserify"),
+         "http": require.resolve("stream-http"),
+         "stream": require.resolve("stream-browserify"),
+         "path": require.resolve("path-browserify")
+      }
    },
    module: {
       rules: [

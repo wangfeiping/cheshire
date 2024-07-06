@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "tsc": "tsc -build --force tsconfig.json",
     "build": "webpack --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +20,13 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@api/tron": "file:.api/apis/tron"
+    "@api/tron": "file:.api/apis/tron",
+    "https-browserify": "^1.0.0",
+    "path-browserify": "^1.0.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "tronweb": "^5.3.2",
+    "url": "^0.11.3",
+    "util": "^0.12.5"
   }
 }
