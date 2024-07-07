@@ -1,5 +1,6 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 module.exports = {
    mode: "production",
    entry: {
@@ -18,12 +19,18 @@ module.exports = {
       extensions: [".ts", ".js"],
       fallback: {
          //"crypto-browserify": require.resolve('crypto-browserify'), //if you want to use this module also don't forget npm i crypto-browserify 
-         "fs": false,
+         // "fs": false,
+         "fs": require.resolve("browserify-fs"),
+         // "fs": require.resolve("fs.promises"),
+         // "fs": require.resolve("browserfs"),
          "url": require.resolve("url/"),
          "https": require.resolve("https-browserify"),
          "http": require.resolve("stream-http"),
          "stream": require.resolve("stream-browserify"),
-         "path": require.resolve("path-browserify")
+         "path": require.resolve("path-browserify"),
+         "process": require.resolve('process'),
+         "process/browser": require.resolve('process/browser'),
+         "buffer": require.resolve("buffer"),
       }
    },
    module: {
@@ -38,6 +45,14 @@ module.exports = {
    plugins: [
       new CopyPlugin({
          patterns: [{from: '.', to: '../',context: "public"}]
+      }),
+      // new webpack.DefinePlugin({
+      //    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      //    'process.env.MY_ENV': JSON.stringify(process.env.MY_ENV),
+      //    }),
+      new webpack.ProvidePlugin({
+         process: 'process/browser',
+         Buffer: ["buffer", "Buffer"],
       }),
    ],
 };

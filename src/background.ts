@@ -37,8 +37,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     // });
     // console.log("receive action popup...");
     tron.walletGetnowblock()
-  .then(({ data }) => console.log(data))
-  .catch(err => console.error(err));
+      .then(({ data }) => console.log(data))
+      .catch(err => console.error(err));
     return true;
   }
   if (message.action === 'dashboard') {
