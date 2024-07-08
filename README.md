@@ -1,10 +1,31 @@
 # Cheshire Cat
 
+可能是由于TronWeb 还不支持 Manifest.json v3, 需要降级到 v2  
+
+Manifest V2 support timeline  
+June 2025: Chrome MV2 deprecation enterprise rollout  
+https://developer.chrome.com/docs/extensions/develop/migrate/mv2-deprecation-timeline  
+
 ## 构建
 
 $ npm run build
 
+运行时会有警告：  
+1) Manifest version 2 is deprecated, and support will be removed in 2024. See https://developer.chrome.com/docs/extensions/develop/migrate/mv2-deprecation-timeline for details.  
+
+2) 'scripting' requires manifest version of at least 3.  
+
 ## 参考
+
+Manifest V2  
+https://developer.chrome.com/docs/extensions/mv2/getstarted/  
+
+browser_action.default_popup in Manifest.json v2  
+https://developer.chrome.com/docs/extensions/mv2/reference/browserAction  
+
+Chrome Extensions: Adding a badge  
+chrome.browserAction.setBadgeText(...)  
+https://dev.to/paulasantamaria/chrome-extensions-adding-a-badge-644  
 
 https://developer.chrome.com/docs/extensions  
 https://developer.chrome.com/docs/extensions/get-started  

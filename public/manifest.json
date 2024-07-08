@@ -1,17 +1,19 @@
 {
-    "name": "Change Theme Extension",
-    "description": "This extension is made for demonstration purposes",
+    "name": "Cheshire Cat",
     "version": "1.0",
-    "manifest_version": 3,
+    "description": "This extension is made for demonstration purposes",
+    "manifest_version": 2,
     "permissions": [
        "activeTab",
        "scripting"
     ],
-    "action":{
+    "browser_action": {
+       "default_title": "Cheshire Cat",
        "default_popup": "popup.html"
     },
     "background": {
-       "service_worker": "./js/background.js"
+       "persistent": false,
+       "scripts": [ "./js/background.js" ]
     }
  }
 
