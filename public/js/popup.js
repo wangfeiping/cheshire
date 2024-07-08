@@ -1,3 +1,9 @@
+function showResponse(response) {
+  const txt = document.createElement('text');
+  txt.textContent = JSON.stringify(response);
+  document.body.appendChild(txt);
+}
+
 const button = document.createElement('button');
 button.textContent = 'Click me';
 button.addEventListener('click', () => {
@@ -8,3 +14,16 @@ button.addEventListener('click', () => {
 });
 document.body.appendChild(button);
 
+const triggerBtn = document.createElement('button');
+triggerBtn.textContent = 'Trigger';
+triggerBtn.addEventListener('click', () => {
+  // 调用tron
+  const options = {method: 'GET', headers: {accept: 'application/json'}};
+
+  fetch('https://api.shasta.trongrid.io/walletsolidity/getnowblock', options)
+  .then(response => response.json())
+  .then(response => showResponse(response))
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
+});
+document.body.appendChild(triggerBtn);
