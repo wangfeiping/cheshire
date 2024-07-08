@@ -3,6 +3,7 @@
     "description": "This extension is made for demonstration purposes",
     "version": "1.0",
     "manifest_version": 3,
+    "minimum_chrome_version": "92",
     "permissions": [
        "activeTab",
        "scripting"
@@ -11,7 +12,8 @@
        "default_popup": "popup.html"
     },
     "background": {
-       "service_worker": "./js/background.js"
+       "service_worker": "./js/background.js",
+       "type": "module"
     }
  }
 

@@ -19,6 +19,6 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@api/tron": "file:.api/apis/tron"
+    "tronweb": "^5.3.2"
   }
 }

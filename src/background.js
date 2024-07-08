@@ -1,3 +1,5 @@
+import {TronWeb} from './TronWeb.js';
+
 let active = false;
 
 async function onInit() {

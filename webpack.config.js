@@ -3,7 +3,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
    mode: "production",
    entry: {
-      background: path.resolve(__dirname, ".", "src", "background.ts"),
+      background: path.resolve(__dirname, ".", "src", "background.js"),
    },
    devServer: {
     "writeToDisk": true,
@@ -17,15 +17,15 @@ module.exports = {
    resolve: {
       extensions: [".ts", ".js"],
    },
-   module: {
-      rules: [
-         {
-            test: /\.tsx?$/,
-            loader: "ts-loader",
-            exclude: /node_modules/,
-         },
-      ],
-   },
+   // module: {
+   //    rules: [
+   //       {
+   //          test: /\.tsx?$/,
+   //          loader: "ts-loader",
+   //          exclude: /node_modules/,
+   //       },
+   //    ],
+   // },
    plugins: [
       new CopyPlugin({
          patterns: [{from: '.', to: '../',context: "public"}]

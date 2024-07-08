@@ -4,6 +4,11 @@
 
 $ npm run build
 
+## ERROR
+
+Uncaught ReferenceError: window is not defined
+https://www.cnblogs.com/exoo/p/16852720.html
+
 ## 参考
 
 https://developer.chrome.com/docs/extensions  
@@ -38,4 +43,3 @@ TRON JS SDK
 https://github.com/tronprotocol/tronweb
 
 https://developers.tron.network/reference/getnowblock
-
