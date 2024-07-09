@@ -31,7 +31,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
   if (message.action === 'trx_getbalance') {
     console.log("addr: "+ message.addr)
-    
+
     const tronWeb = new TronWeb({
       // fullHost: 'https://api.trongrid.io',
       // fullHost: 'https://api.shasta.trongrid.io',
@@ -47,10 +47,14 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       //   // https://developers.tron.network/reference/select-network
       //   // Currently using Trongrid to request the Shasta/Nile testnet does not need to set an API Key.
       // },
-      privateKey: message.prik,
+      // privateKey: message.prik,
     });
     tronWeb.trx.getBalance(message.addr)
       .then(result => console.log(result))
+    // tronWeb.trx.createTransaction(message.addr, 1, 'TDSYST3evMzdCk3w1KwwroknqSb7YUxikk')
+    //   .then(result => console.log(result))
+    //   .then(tronWeb.trx.sign)
+
     return true;
   }
 });
