@@ -13,6 +13,18 @@ async function onInit() {
 // 监听安装事件
 chrome.runtime.onInstalled.addListener(onInit);
 
+async function sendRawTransaction(tronWeb, from, prik){
+  // https://developers.tron.network/reference/sendtrx
+  const tradeobj = await tronWeb.transactionBuilder.sendTrx('TDSYST3evMzdCk3w1KwwroknqSb7YUxikk', 1, from);
+  console.log("TX: "+tradeobj)
+  // https://developers.tron.network/reference/sendrawtransaction
+  const signedtxn = await tronWeb.trx.sign(tradeobj, prik);
+  const receipt = await tronWeb.trx.sendRawTransaction(signedtxn);
+  
+  // https://nile.tronscan.org/#/transaction/0d27530edac41bbbfa73e69a55cd97029bb3d5aabebbcdfd1fa4e9acaf67f14c
+  return receipt;
+}
+
 // 通过监听消息来切换 popup 页面，不会在当前popup 中刷新，点击图标后才会进入新的 popup 页面
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === 'popup') {
@@ -51,9 +63,9 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     });
     tronWeb.trx.getBalance(message.addr)
       .then(result => console.log(result))
-    // tronWeb.trx.createTransaction(message.addr, 1, 'TDSYST3evMzdCk3w1KwwroknqSb7YUxikk')
-    //   .then(result => console.log(result))
-    //   .then(tronWeb.trx.sign)
+    
+    sendRawTransaction(tronWeb, message.addr, message.prik)
+      .then(receipt => console.log(receipt))
 
     return true;
   }
