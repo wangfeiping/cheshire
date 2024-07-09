@@ -1,3 +1,5 @@
+import TronWeb from './TronWeb.js';
+
 let active = false;
 
 async function onInit() {
@@ -25,6 +27,30 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       popup: 'dashboard.html'
     });
     console.log("receive action dashboard...");
+    return true;
+  }
+  if (message.action === 'trx_getbalance') {
+    console.log("addr: "+ message.addr)
+    
+    const tronWeb = new TronWeb({
+      // fullHost: 'https://api.trongrid.io',
+      // fullHost: 'https://api.shasta.trongrid.io',
+      fullHost: 'https://nile.trongrid.io',
+      // fullHost: 'http://test.ng:8088/',
+      
+      // 调用测试网不要设置 headers，否则api 服务接口回返回错误无法调用 - 20240709
+      // headers: {
+      //   'Content-Type': 'application/json',
+      //   'Access-Control-Allow-Headers': '*',
+      //   'Access-Control-Allow-Origin': '*',
+      //   "TRON-PRO-API-KEY": "... api-key-here ..."
+      //   // https://developers.tron.network/reference/select-network
+      //   // Currently using Trongrid to request the Shasta/Nile testnet does not need to set an API Key.
+      // },
+      privateKey: message.prik,
+    });
+    tronWeb.trx.getBalance(message.addr)
+      .then(result => console.log(result))
     return true;
   }
 });

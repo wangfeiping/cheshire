@@ -56,7 +56,10 @@ https://developer.chrome.com/docs/extensions/reference/api/scripting
 
 TRON JS SDK
 
-https://github.com/tronprotocol/tronweb
+TronWeb SDK github  
+https://github.com/tronprotocol/tronweb  
+TronWeb SDK API 文档  
+https://developers.tron.network/reference/tronweb-object  
 
-https://developers.tron.network/reference/getnowblock
+https://developers.tron.network/reference/getnowblock  
 

@@ -14,16 +14,14 @@ button.addEventListener('click', () => {
 });
 document.body.appendChild(button);
 
-const triggerBtn = document.createElement('button');
-triggerBtn.textContent = 'Trigger';
-triggerBtn.addEventListener('click', () => {
-  // 调用tron
-  const options = {method: 'GET', headers: {accept: 'application/json'}};
-
-  fetch('https://api.shasta.trongrid.io/walletsolidity/getnowblock', options)
-  .then(response => response.json())
-  .then(response => showResponse(response))
-  .then(response => console.log(response))
-  .catch(err => console.error(err));
+const addrText = document.getElementById('test_addr');
+const prikText = document.getElementById('test_prik');
+const trxGetBalanceBtn = document.getElementById('trx_getbalance');
+trxGetBalanceBtn.addEventListener('click', () => {
+  chrome.runtime.sendMessage({
+    action: 'trx_getbalance',
+    addr: addrText.value,
+    prik: prikText.value,
+  });
 });
-document.body.appendChild(triggerBtn);
+
